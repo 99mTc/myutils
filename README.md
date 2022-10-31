@@ -23,3 +23,6 @@
     </li>
    </ol>
  </ol>
+
+used HashRouter,
+package.json > homepage: "./"
