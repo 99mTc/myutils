@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import About from "./About";
+import AboutQuery from "./AboutQuery";
+import Home from "./Home";
+import Profile from "./Profile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        {/* URL 파라미터 연습
+        username이라는 글자는 Profile.js의
+        const profile에 있는 username과 똑같이 맞춰주면 된다 */}
+        <Route path="/profile/:username" element={<Profile />} />
+        <Route path="aboutquery" element={<AboutQuery />} />
+      </Routes>
+    </>
   );
 }
 
